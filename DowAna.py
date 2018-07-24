@@ -10,4 +10,4 @@ pd.options.display.max_columns = 100 # Set max columns to 100 to ensure all data
 df = pd.read_csv('dow_jones_index.data')
 #print(df.head(10))
 
-print(df.describe())
+print(df.iloc[:, [3]].describe())
