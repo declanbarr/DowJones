@@ -7,7 +7,7 @@ pd.options.display.max_rows = 999 # Set max rows to 999 to ensure all rows are d
 pd.options.display.max_columns = 100 # Set max columns to 100 to ensure all data is shown for describe() function (from https://pandas.pydata.org/pandas-docs/stable/options.html)
 
 
-df = pd.read_csv('dow_jones_index.data')
+df = pd.read_csv('dow_jones_index.data', converters={'open': lambda s: float(s.replace('$', ''))}) # From https://stackoverflow.com/questions/36320317/pandas-read-csv-ignore-dollar-sign-when-parsing-numbers
 #print(df.head(10))
 
 print(df.iloc[:, [3]].describe())
