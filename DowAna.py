@@ -10,3 +10,4 @@ df = pd.read_csv('dow_jones_index.data', converters={'open': lambda s: float(s.r
 #print(df.head(10))
 for x in range(3,7):
     print(df.iloc[:, [x]].describe())
+
